@@ -1,0 +1,104 @@
+[
+  {
+    "name": "BL Book",
+    "icon": "64px-BL_Book_Icon.webp",
+    "definition": "Repel targets with orbiting BL Books.",
+    "weaponType": "Multishot"
+  },
+  {
+    "name": "CEO's Tears",
+    "icon": "45px-CEO's_Tears_Icon.webp",
+    "definition": "Drops a falling bounce ball on a random target. Size of ball varies between characters.",
+    "weaponType": "Multishot"
+  },
+  {
+    "name": "Elite Lava Bucket",
+    "icon": "54px-Elite_Lava_Bucket_Icon.webp",
+    "definition": "Drop lava on the ground, burning targets slowly.",
+    "weaponType": "Multishot"
+  },
+  {
+    "name": "Wamy Water",
+    "icon": "55px-Wamy_Water_Icon.webp",
+    "definition": "Create a splash of unknown water in front, knocking targets back.",
+    "weaponType": "Melee"
+  },
+  {
+    "name": "Bounce Ball",
+    "icon": "64px-Bounce_Ball_Icon.webp",
+    "definition": "Drops a falling bounce ball on a random target. Size of ball varies between characters.",
+    "weaponType": "Multishot"
+  },
+  {
+    "name": "Cutting Board",
+    "icon": "64px-Cutting_Board_Icon.webp",
+    "definition": "Create a defensive wall that damages targets behind you. Effectiveness is increased on certain characters.",
+    "weaponType": "Ranged"
+  },
+  {
+    "name": "EN's Curse",
+    "icon": "64px-EN's_Curse_Icon.webp",
+    "definition": "Fires cursed energy in front. On hit, there is a chance to spread another Curse towards another nearby target.",
+    "weaponType": "Multishot"
+  },
+  {
+    "name": "Fan Beam",
+    "icon": "64px-Fan_Beam_Icon.webp",
+    "definition": "Shoot a powerful laser beam from the microphone.",
+    "weaponType": "Ranged"
+  },
+  {
+    "name": "Glowstick",
+    "icon": "64px-Glowstick_Icon.webp",
+    "definition": "Throw a glowstick to a nearby target and then spins back to player.",
+    "weaponType": "Multishot"
+  },
+  {
+    "name": "Holo Bomb",
+    "icon": "64px-Holo_Bomb_Icon.webp",
+    "definition": "A bomb that explodes, dealing damage to all nearby targets.",
+    "weaponType": "Multishot"
+  },
+  {
+    "name": "Idol Song",
+    "icon": "64px-Idol_Song_Icon.webp",
+    "definition": "Magical music notes that float vertically in both directions.",
+    "weaponType": "Ranged"
+  },
+  {
+    "name": "Owl Dagger",
+    "icon": "64px-Owl_Dagger_Icon.webp",
+    "definition": "A very fast dagger that slashes continuously in front.",
+    "weaponType": "Melee"
+  },
+  {
+    "name": "Plug Type Asacoco",
+    "icon": "64px-Plug_Type_Asacoco_Icon.webp",
+    "definition": "Fire a fast piercing tail targeted at a random target.",
+    "weaponType": "Multishot"
+  },
+  {
+    "name": "Psycho Axe",
+    "icon": "64px-Psycho_Axe_Icon.webp",
+    "definition": "Throw an axe that spirals outward from the player.",
+    "weaponType": "Ranged"
+  },
+  {
+    "name": "Sausage",
+    "icon": "64px-Sausage_Icon.webp",
+    "definition": "If there are targets nearby, swings a small sausage towards the closest target.",
+    "weaponType": "Melee"
+  },
+  {
+    "name": "Spider Cooking",
+    "icon": "64px-Spider_Cooking_Icon.webp",
+    "definition": "Create an area of miasma around, dealing slow damage to targets inside.",
+    "weaponType": "Melee"
+  },
+  {
+    "name": "X-Potato",
+    "icon": "64px-X-Potato_Icon.webp",
+    "definition": "Throw a potato that bounces around the screen before exploding into an X.",
+    "weaponType": "Multishot"
+  }
+]

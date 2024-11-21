@@ -1,0 +1,224 @@
+[
+  {
+    "name": "Beetle",
+    "icon": "64px-Beetle_Icon.webp",
+    "definition": "Increase damage of any Character Skill attacks by 33%. Increase it by a further 1% for each player level.",
+    "canSuper": false
+  },
+  {
+    "name": "Blacksmith's Gear",
+    "icon": "64px-Blacksmith's_Gear_Icon.webp",
+    "definition": "Normal anvils can be used twice. Only applies to anvils since taking this item.",
+    "canSuper": false
+  },
+  {
+    "name": "Body Pillow",
+    "icon": "64px-Body_Pillow_Icon.webp",
+    "definition": "Gain a shield that absorbs up to 15 damage. Every 15 seconds, this shield refreshes. Also reduces damage taken by 10%.",
+    "canSuper": true
+  },
+  {
+    "name": "Breastplate",
+    "icon": "64px-Breastplate_Icon.webp",
+    "definition": "Reduce damage taken by 25% and SPD by 10%. When attacked there is a 50% chance the attacker also takes 200% damage.",
+    "canSuper": true
+  },
+  {
+    "name": "Candy Kingdom Sweets",
+    "icon": "64px-Candy_Kingdom_Sweets_Icon.webp",
+    "definition": "Increase Haste by 40%. All attacks deal 0.75x damage, but have a 10% chance to apply a second attack dealing 33% of the initial damage.",
+    "canSuper": false
+  },
+  {
+    "name": "Chicken's Feather",
+    "icon": "64px-Chicken's_Feather_Icon.webp",
+    "definition": "Gain 1 revive. On revive, instantly heal 50% HP and all non-Boss targets are defeated.",
+    "canSuper": true
+  },
+  {
+    "name": "Corporation Pin",
+    "icon": "64px-Corporation_Pin_Icon.webp",
+    "definition": "Every 40% of Pick Up Radius also increases attack area of all weapons by 2%.",
+    "canSuper": false
+  },
+  {
+    "name": "Credit Card",
+    "icon": "64px-Credit_Card_Icon.webp",
+    "definition": "Cost of enhancing is reduced by 20% and anvils appear 20% more often.",
+    "canSuper": true
+  },
+  {
+    "name": "Devil Hat",
+    "icon": "64px-Devil_Hat_Icon.webp",
+    "definition": "After using Special, gain a 25 second buff that increases the damage of all Ranged and Multi-Shot weapons by 1.3x.",
+    "canSuper": false
+  },
+  {
+    "name": "Energy Drink",
+    "icon": "64px-Energy_Drink_Icon.webp",
+    "definition": "Increase Haste by 10% and SPD by 40%, but reduce Max HP by 20% as well.",
+    "canSuper": true
+  },
+  {
+    "name": "Face Mask",
+    "icon": "64px-Face_Mask_Icon.webp",
+    "definition": "Multiply all damage dealt by 1.3 times and increase Haste by 10%. Take 30% more damage.",
+    "canSuper": false
+  },
+  {
+    "name": "Focus Shades",
+    "icon": "64px-Focus_Shades_Icon.webp",
+    "definition": "All ranged or multi-shot projectile weapons have +10% chance to crit, and if it does, the target takes 500% of the weapon's damage over 5 seconds.",
+    "canSuper": false
+  },
+  {
+    "name": "Full Meal",
+    "icon": "64px-Full_Meal_Icon.webp",
+    "definition": "All healing is doubled.",
+    "canSuper": false
+  },
+  {
+    "name": "Gorilla's Paw",
+    "icon": "64px-Gorilla's_Paw_Icon.webp",
+    "definition": "Attack damage is multiplied by 1.2 times, but lose 20% critical chance.",
+    "canSuper": true
+  },
+  {
+    "name": "GWS Pill",
+    "icon": "64px-GWS_Pill_Icon.webp",
+    "definition": "While the Special meter is still charging, increase crit by 15%. Also increase damage of all Skill attacks by 20%.",
+    "canSuper": false
+  },
+  {
+    "name": "Halu",
+    "icon": "50px-Halu_Icon.webp",
+    "definition": "Increase regular fan spawns, and fans become 5% stronger. Gain 1 HoloCoin for every 5 targets defeated since taking this item.",
+    "canSuper": false
+  },
+  {
+    "name": "Headphones",
+    "icon": "64px-Headphones_Icon.webp",
+    "definition": "15% chance to negate 1 hit, and create a shockwave that knocks back all targets.",
+    "canSuper": true
+  },
+  {
+    "name": "Hope Soda",
+    "icon": "64px-Hope_Soda_Icon.webp",
+    "definition": "Increase critical hit damage 10% and increase Special cooldown by 25%.",
+    "canSuper": true
+  },
+  {
+    "name": "Idol Costume",
+    "icon": "64px-Idol_Costume_Icon.webp",
+    "definition": "Reduce Special cooldown by 20%.",
+    "canSuper": false
+  },
+  {
+    "name": "Injection Type Asacoco",
+    "icon": "64px-Injection_Type_Asacoco_Icon.webp",
+    "definition": "Lose 5% HP every second (until 1 HP remains), but gain 40% ATK.",
+    "canSuper": false
+  },
+  {
+    "name": "Just Bandage",
+    "icon": "64px-Just_Bandage_Icon.webp",
+    "definition": "Increase Max HP by 10. After being hit, heal 10% HP every 3 seconds until 80% of the damage taken is recovered (recovers minimum 1 HP).",
+    "canSuper": false
+  },
+  {
+    "name": "Knightly Milk",
+    "icon": "64px-Knightly_Milk_Icon.webp",
+    "definition": "Increases attack size and knockback effects of weapons by 10%. Also increase Pick Up Range by 30%.",
+    "canSuper": true
+  },
+  {
+    "name": "Kusogaki Shackles",
+    "icon": "64px-Kusogaki_Shackles_Icon.webp",
+    "definition": "Reduce the negative effects of any items placed on the player by 33%.",
+    "canSuper": false
+  },
+  {
+    "name": "Limiter",
+    "icon": "64px-Limiter_Icon.webp",
+    "definition": "Gain 100% Pick Up Range.",
+    "canSuper": true
+  },
+  {
+    "name": "Membership",
+    "icon": "64px-Membership_Icon.webp",
+    "definition": "Lose 3 HoloCoin every second. If HoloCoins is more than 0, increase ATK by 30% and take 10% less damage.",
+    "canSuper": false
+  },
+  {
+    "name": "Ninja Headband",
+    "icon": "64px-Ninja_Headband_Icon.webp",
+    "definition": "Increase SPD by 20%. In addition, increase damage of Melee weapons by 5%.",
+    "canSuper": false
+  },
+  {
+    "name": "Nurse's Horn",
+    "icon": "64px-Nurse's_Horn_Icon.webp",
+    "definition": "When defeating a target, there is a 30% chance to life-steal 2 HP. If taking a hit while HP is less than 15%, there is a chance to heal 20% HP.",
+    "canSuper": true
+  },
+  {
+    "name": "Piki Piki Piman",
+    "icon": "55px-Piki_Piki_Piman_Icon.webp",
+    "definition": "Gain 15 Max HP. For every 6 points of total Max HP, increase damage of Main Weapon and Special attacks by 1%.",
+    "canSuper": false
+  },
+  {
+    "name": "Plushie",
+    "icon": "64px-Plushie_Icon.webp",
+    "definition": "Delay taken damage. On any hit by a target, take only 30% of the damage initially, then take the remaining damage gradually.",
+    "canSuper": false
+  },
+  {
+    "name": "Promise Tiara",
+    "icon": "64px-Promise_Tiara_Icon.png",
+    "definition": "Increase the drop rate of Stamps by 30%. For each stamp that has ever dropped, gain +0.5% Crit and +1% Haste permanently.",
+    "canSuper": false
+  },
+  {
+    "name": "Raven Feather",
+    "icon": "64px-Raven_Feather_Icon.webp",
+    "definition": "Gain +1 life. Increase 6% ATK every minute. Upon losing 1 life, lose the gained ATK and lose 50% gained HoloCoins at the end of the game.",
+    "canSuper": false
+  },
+  {
+    "name": "Researcher's Coat",
+    "icon": "64px-Researcher's_Coat_Icon.webp",
+    "definition": "Gain 1% EXP every 2 seconds. When HP is full, the EXP rate slowly increases to 2%, and is reset to 1% EXP when taking damage.",
+    "canSuper": false
+  },
+  {
+    "name": "Sake",
+    "icon": "64px-Sake_Icon.webp",
+    "definition": "Gain 1% crit buff every second up to 10%. If taking damage by a target, lose half the buff. If eating food, +5% crit for 10 seconds.",
+    "canSuper": true
+  },
+  {
+    "name": "Stolen Piggy Bank",
+    "icon": "64px-Stolen_Piggy_Bank_Icon.webp",
+    "definition": "Gain 1 coin for every 100px traveled and increase SPD by 20%. However, reduce Pick Up Range by 30%.",
+    "canSuper": true
+  },
+  {
+    "name": "Study Glasses",
+    "icon": "64px-Study_Glasses_Icon.webp",
+    "definition": "Increase EXP gain by 10%. On every level up, increase Weapon damage by 0.3%.",
+    "canSuper": true
+  },
+  {
+    "name": "Super Chatto Time!",
+    "icon": "64px-Super_Chatto_Time!_Icon.webp",
+    "definition": "Targets drop 20% more HoloCoins. All HoloCoins are picked automatically.",
+    "canSuper": true
+  },
+  {
+    "name": "Uber Sheep",
+    "icon": "64px-Uber_Sheep_Icon.webp",
+    "definition": "Every 10 seconds, food will drop close by. Also increase food drop chance from defeated targets by 10%.",
+    "canSuper": false
+  }
+]

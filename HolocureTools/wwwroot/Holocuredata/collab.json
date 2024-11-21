@@ -1,0 +1,252 @@
+[
+  {
+    "name": "Absolute Wall",
+    "icon": "64px-Absolute_Wall_Icon.webp",
+    "definition": "Summon forth the Great Wall of Hololive. Has a small chance to protect from projectiles.",
+    "weaponType": "Melee",
+    "ParentWeapons": [
+      "Cutting Board",
+      "Bounce Ball"
+    ]
+  },
+  {
+    "name": "BL Fujoshi",
+    "icon": "64px-BL_Fujoshi_Icon.webp",
+    "definition": "Endless BL, how shameless!",
+    "weaponType": "Melee",
+    "ParentWeapons": [
+      "BL Book",
+      "Psycho Axe"
+    ]
+  },
+  {
+    "name": "Black Plague",
+    "icon": "64px-Black_Plague_Icon.webp",
+    "definition": "A historically deadly disease that continuously spreads to any targets nearby. Has a very small chance to defeat a target instantly.",
+    "weaponType": "Melee",
+    "ParentWeapons": [
+      "Owl Dagger",
+      "EN's Curse"
+    ]
+  },
+  {
+    "name": "Blood Lust",
+    "icon": "64px-Blood_Lust_Icon.webp",
+    "definition": "Two powerful murderous forces combine.",
+    "weaponType": "Melee",
+    "ParentWeapons": [
+      "Owl Dagger",
+      "Psycho Axe"
+    ]
+  },
+  {
+    "name": "Bone Bros.",
+    "icon": "64px-Bone_Bros.webp",
+    "definition": "Don't bite the hand that feeds you if it's holding a knife.",
+    "weaponType": "Multishot",
+    "ParentWeapons": [
+      "Cutting Board",
+      "EN's Curse"
+    ]
+  },
+  {
+    "name": "Breathe-In Type Asacoco",
+    "icon": "64px-Breathe-In_Type_Asacoco_Icon.webp",
+    "definition": "Limited time only for 5000 yen!!!",
+    "weaponType": "Multishot",
+    "ParentWeapons": [
+      "Plug Type Asacoco",
+      "Holo Bomb"
+    ]
+  },
+  {
+    "name": "Broken Dreams",
+    "icon": "64px-Broken_Dreams_Icon.png",
+    "definition": "The dream is dead and there is no hope. Bubble Shield also slows targets.",
+    "weaponType": "Multishot",
+    "ParentWeapons": [
+      "Spider Cooking",
+      "CEO's Tears"
+    ]
+  },
+  {
+    "name": "Crescent Bardiche",
+    "icon": "64px-Crescent_Bardiche_Icon.webp",
+    "definition": "A large bardiche that deals high critical damage, and summons falling stars.",
+    "weaponType": "Melee",
+    "ParentWeapons": [
+      "Psycho Axe",
+      "Idol Song"
+    ]
+  },
+  {
+    "name": "Curse Ball",
+    "icon": "64px-Curse_Ball_Icon.webp",
+    "definition": "Play ball! The more you play, the longer it stays.",
+    "weaponType": "Ranged",
+    "ParentWeapons": [
+      "EN's Curse",
+      "Bounce Ball"
+    ]
+  },
+  {
+    "name": "Dragon Fire",
+    "icon": "64px-Dragon_Fire_Icon.webp",
+    "definition": "The power of a once LEGENDARY Dragon. The OG.",
+    "weaponType": "Multishot",
+    "ParentWeapons": [
+      "Fan Beam",
+      "Plug Type Asacoco"
+    ]
+  },
+  {
+    "name": "Eldritch Horror",
+    "icon": "62px-Eldritch_Horror_Icon.webp",
+    "definition": "Summons unknown horrors. May Life-steal up to 5% HP from targets defeated in whirlpool.",
+    "weaponType": "Ranged",
+    "ParentWeapons": [
+      "EN's Curse",
+      "Spider Cooking"
+    ]
+  },
+  {
+    "name": "Elite Cooking",
+    "icon": "64px-Elite_Cooking_Icon.webp",
+    "definition": "May have severe unknown side effects if consumed.",
+    "weaponType": "Ranged",
+    "ParentWeapons": [
+      "Elite Lava Bucket",
+      "Spider Cooking"
+    ]
+  },
+  {
+    "name": "Flattening Board",
+    "icon": "64px-Flattening_Board_Icon.webp",
+    "definition": "Feel the wrath of cutting boards...!?",
+    "weaponType": "Multishot",
+    "ParentWeapons": [
+      "Cutting Board",
+      "Holo Bomb"
+    ]
+  },
+  {
+    "name": "Frozen Sea",
+    "icon": "64px-Frozen_Sea_Icon.webp",
+    "definition": "Endless waves of ice that slows targets.",
+    "weaponType": "Multishot",
+    "ParentWeapons": [
+      "BL Book",
+      "Wamy Water"
+    ]
+  },
+  {
+    "name": "I'm Die, Thank You Forever",
+    "icon": "64px-I'm_Die,_Thank_You_Forever_Icon.webp",
+    "definition": "Throw a Bomb that attaches to a target. When target is defeated, the bomb explodes.",
+    "weaponType": "Ranged",
+    "ParentWeapons": [
+      "X-Potato",
+      "Holo Bomb"
+    ]
+  },
+  {
+    "name": "Idol Concert",
+    "icon": "64px-Idol_Concert_Icon.webp",
+    "definition": "Throw glowstick in all directions that explode into song!",
+    "weaponType": "Ranged",
+    "ParentWeapons": [
+      "Idol Song",
+      "Glowstick"
+    ]
+  },
+  {
+    "name": "Legendary Sausage",
+    "icon": "64px-Legendary_Sausage_Icon.webp",
+    "definition": "A continuously spinning sausage. Spins faster as you move.",
+    "weaponType": "Ranged",
+    "ParentWeapons": [
+      "BL Book",
+      "Sausage"
+    ]
+  },
+  {
+    "name": "Light Beam",
+    "icon": "64px-Light_Beam_Icon.webp",
+    "definition": "Throw glowsticks that explode into targeted beams!",
+    "weaponType": "Multishot",
+    "ParentWeapons": [
+      "Glowstick",
+      "Fan Beam"
+    ]
+  },
+  {
+    "name": "Lightning Wiener",
+    "icon": "64px-Lightning_Wiener_Icon.png",
+    "definition": "Shoots Lightning charged weiners that home into targets, and summons lightning to strike down when hit.",
+    "weaponType": "Multishot",
+    "ParentWeapons": [
+      "Sausage",
+      "Plug Type Asacoco"
+    ]
+  },
+  {
+    "name": "MiComet",
+    "icon": "64px-MiComet_Icon.webp",
+    "definition": "Real business partners.",
+    "weaponType": "Ranged",
+    "ParentWeapons": [
+      "Elite Lava Bucket",
+      "Psycho Axe"
+    ]
+  },
+  {
+    "name": "MiKorone",
+    "icon": "64px-MiKorone_Icon.webp",
+    "definition": "Burning hot potatos fall, and targets hit by it leave lava pools as they move.",
+    "weaponType": "Multishot",
+    "ParentWeapons": [
+      "X-Potato",
+      "Elite Lava Bucket"
+    ]
+  },
+  {
+    "name": "Rap Dog",
+    "icon": "64px-Rap_Dog_Icon.webp",
+    "definition": "Drop some HOT BEATS where targets hit take 20% more damage.",
+    "weaponType": "Ranged",
+    "ParentWeapons": [
+      "X-Potato",
+      "Idol Song"
+    ]
+  },
+  {
+    "name": "Ring Of Fitness",
+    "icon": "64px-Ring_Of_Fitness_Icon.webp",
+    "definition": "Continuously throw a ring of fitness balls. Hope nobody walks in.",
+    "weaponType": "Multishot",
+    "ParentWeapons": [
+      "Bounce Ball",
+      "CEO's Tears"
+    ]
+  },
+  {
+    "name": "Snow Flower Sake",
+    "icon": "64px-Snow_Flower_Sake_Icon.webp",
+    "definition": "Throw a bottle that shatters into a Snowflake. Has a 30% chance to cause Frozen.",
+    "weaponType": "Multishot",
+    "ParentWeapons": [
+      "Wamy Water",
+      "Glowstick"
+    ]
+  },
+  {
+    "name": "Stream Of Tears",
+    "icon": "64px-Stream_of_Tears_Icon.webp",
+    "definition": "Nothing can stop the stream of tears.",
+    "weaponType": "Ranged",
+    "ParentWeapons": [
+      "Fan Beam",
+      "CEO's Tears"
+    ]
+  }
+]

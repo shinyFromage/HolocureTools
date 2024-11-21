@@ -1,5 +1,512 @@
-<h3>HoloBuild</h3>
+@page "/builds"
+
+
+<h1>Holocure</h1>
+
+<div class="image-grids">
+    <h3>Weapons</h3>
+    <div class="image-grid">
+        @foreach (Weapon weapon in Weapons)
+        {
+            <div class="clickable-image-container @(weapon.IsSelected ? "selected" : "") @(weapon.IsRestricted ? "restricted" : "") @(weapon.IsRestricted ? "restricted" : "") @(weapon.IsRecommended ? "available" : "")" 
+                 @onclick="() => OnSelectionClick(weapon)"
+                 @onmouseover="weapon.ShowDetails">
+                <img src="images/weapons/@weapon.Icon" alt="@weapon.Name" class="clickable-image"/>
+            </div>
+        }
+    </div>
+
+    <h3>Collabs</h3>
+    <div class="image-grid">
+        @foreach (Collab collab in Collabs)
+        {
+            <div class="clickable-image-container @(collab.IsSelected ? "selected" : "") @(collab.IsRestricted ? "restricted" : "")" 
+                 @onclick="() => OnSelectionClick(collab)"
+                 @onmouseover="collab.ShowDetails"
+                 @onmouseout="collab.ClearDetails">
+                <img src="images/collabs/@collab.Icon" alt="@collab.Name" class="clickable-image"/>
+            </div>
+        }
+    </div>
+
+    <h3>Super Collabs</h3>
+    <div class="image-grid">
+        @foreach (SuperCollab superCollab in SuperCollabs)
+        {
+            <div class="clickable-image-container @(superCollab.IsSelected ? "selected" : "") @(superCollab.IsRestricted ? "restricted" : "") @(superCollab.IsAvailable ? "available" : "")" 
+                 @onclick="() => OnSelectionClick(superCollab)"
+                 @onmouseover="superCollab.ShowDetails"
+                 @onmouseout="superCollab.ClearDetails">
+                <img src="images/superCollabs/@superCollab.Icon" alt="@superCollab.Name" class="clickable-image"/>
+            </div>
+        }
+    </div>
+
+    <h3>Items</h3>
+    <div class="image-grid">
+        @foreach (Item item in Items)
+        {
+            <div class="clickable-image-container @(item.IsSelected ? "selected" : "") @(item.IsNeeded ? "available" : "")" 
+                 @onclick="() => OnSelectionClick(item)"
+                 @onmouseover="item.ShowDetails"
+                 @onmouseout="item.ClearDetails">
+                <img src="images/items/@item.Icon" alt="@item.Name" class="clickable-image"/>
+            </div>
+        }
+    </div>
+
+    
+</div>
+
+@if (!string.IsNullOrEmpty(_hoveredItemIcon))
+{
+    <div class="details-section">
+        <h2>@_hoveredItemName</h2>
+        <img src="images/@_hoveredItemClass/@_hoveredItemIcon" alt="@_hoveredItemName" class="detail-icon"/>
+        @if (!string.IsNullOrEmpty(_hoveredItemType))
+        {
+            <img src="images/types/@_hoveredItemTypeIcon" alt="@_hoveredItemType" class="detail-type-icon"/>
+        }
+        <p>@_hoveredItemDescription</p>
+    </div>
+}
 
 @code {
+
+
+    private static void OnSelectionClick(BaseHolocureObject baseHolocureObject)
+    {
+        if (baseHolocureObject.IsRestricted) return;
+        if (baseHolocureObject.IsSelected)
+            baseHolocureObject.Deselected();
+        else
+            baseHolocureObject.Selected();
+    }
+
     
+    //weapons
+    static readonly Weapon BlBook = new Weapon("BL Book", "64px-BL_Book_Icon.webp", "Repel targets with orbiting BL Books.", HolocureType.Multishot);
+    static readonly Weapon CeoTears = new Weapon("CEO's Tears", "45px-CEO's_Tears_Icon.webp", "Drops a falling bounce ball on a random target. Size of ball varies between characters.", HolocureType.Multishot);
+    static readonly Weapon EliteLava = new Weapon("Elite Lava Bucket", "54px-Elite_Lava_Bucket_Icon.webp", "Drop lava on the ground, burning targets slowly.", HolocureType.Multishot);
+    static readonly Weapon WamyWater = new Weapon("Wamy Water", "55px-Wamy_Water_Icon.webp", "Create a splash of unknown water in front, knocking targets back.", HolocureType.Melee);
+    static readonly Weapon BounceBall = new Weapon("Bounce Ball", "64px-Bounce_Ball_Icon.webp", "Drops a falling bounce ball on a random target. Size of ball varies between characters.", HolocureType.Multishot);
+    static readonly Weapon CuttingBoard = new Weapon("Cutting Board", "64px-Cutting_Board_Icon.webp", "Create a defensive wall that damages targets behind you. Effectiveness is increased on certain characters.", HolocureType.Ranged);
+    static readonly Weapon ENCurse = new Weapon("EN's Curse", "64px-EN's_Curse_Icon.webp", "Fires cursed energy in front. On hit, there is a chance to spread another Curse towards another nearby target.", HolocureType.Multishot);
+    static readonly Weapon FanBeam = new Weapon("Fan Beam", "64px-Fan_Beam_Icon.webp", "Shoot a powerful laser beam from the microphone.", HolocureType.Ranged);
+    static readonly Weapon Glowstick = new Weapon("Glowstick", "64px-Glowstick_Icon.webp", "Throw a glowstick to a nearby target and then spins back to player.", HolocureType.Multishot);
+    static readonly Weapon HoloBomb = new Weapon("Holo Bomb", "64px-Holo_Bomb_Icon.webp", "A bomb that explodes, dealing damage to all nearby targets.", HolocureType.Multishot);
+    static readonly Weapon IdolSong = new Weapon("Idol Song", "64px-Idol_Song_Icon.webp", "Magical music notes that float vertically in both directions.", HolocureType.Ranged);
+    static readonly Weapon OwlDagger = new Weapon("Owl Dagger", "64px-Owl_Dagger_Icon.webp", "A very fast dagger that slashes continuously in front.", HolocureType.Melee);
+    static readonly Weapon PlugAsacoco = new Weapon("Plug Type Asacoco", "64px-Plug_Type_Asacoco_Icon.webp", "Fire a fast piercing tail targeted at a random target.", HolocureType.Multishot);
+    static readonly Weapon PsychoAxe = new Weapon("Psycho Axe", "64px-Psycho_Axe_Icon.webp", "Throw an axe that spirals outward from the player.", HolocureType.Ranged);
+    static readonly Weapon Sausage = new Weapon("Sausage", "64px-Sausage_Icon.webp", "If there are targets nearby, swings a small sausage towards the closest target.", HolocureType.Melee);
+    static readonly Weapon SpiderCooking = new Weapon("Spider Cooking", "64px-Spider_Cooking_Icon.webp", "Create an area of miasma around, dealing slow damage to targets inside.", HolocureType.Melee);
+    static readonly Weapon XPotato = new Weapon("X-Potato", "64px-X-Potato_Icon.webp", "Throw a potato that bounces around the screen before exploding into an X.", HolocureType.Multishot);
+    // collabs
+    static readonly Collab AbsoluteWall = new Collab(CuttingBoard, BounceBall, "Absolute Wall", "64px-Absolute_Wall_Icon.webp", "Summon forth the Great Wall of Hololive. Has a small chance to protect from projectiles.", HolocureType.Melee);
+    static readonly Collab BLFujoshi = new Collab(BlBook, PsychoAxe, "BL Fujoshi", "64px-BL_Fujoshi_Icon.webp", "Endless BL, how shameless!", HolocureType.Melee);
+    static readonly Collab BlackPlague = new Collab(OwlDagger, ENCurse, "Black Plague", "64px-Black_Plague_Icon.webp", "A historically deadly disease that continuously spreads to any targets nearby. Has a very small chance to defeat a target instantly.", HolocureType.Melee);
+    static readonly Collab BloodLust = new Collab(OwlDagger, PsychoAxe, "Blood Lust", "64px-Blood_Lust_Icon.webp", "Two powerful murderous forces combine.", HolocureType.Melee);
+    static readonly Collab BoneBros = new Collab(CuttingBoard, ENCurse, "Bone Bros.", "64px-Bone_Bros.webp", "Don't bite the hand that feeds you if it's holding a knife.", HolocureType.Multishot);
+    static readonly Collab BreatheAsacoco = new Collab(PlugAsacoco, HoloBomb, "Breathe-In Type Asacoco", "64px-Breathe-In_Type_Asacoco_Icon.webp", "Limited time only for 5000 yen!!!", HolocureType.Multishot);
+    static readonly Collab BrokenDreams = new Collab(SpiderCooking, CeoTears, "Broken Dreams", "64px-Broken_Dreams_Icon.png", "The dream is dead and there is no hope. Bubble Shield also slows targets.", HolocureType.Multishot);
+    static readonly Collab CrescentBardiche = new Collab(PsychoAxe, IdolSong, "Crescent Bardiche", "64px-Crescent_Bardiche_Icon.webp", "A large bardiche that deals high critical damage, and summons falling stars.", HolocureType.Melee);
+    static readonly Collab CurseBall = new Collab(ENCurse, BounceBall, "Curse Ball", "64px-Curse_Ball_Icon.webp", "Play ball! The more you play, the longer it stays.", HolocureType.Ranged);
+    static readonly Collab DragonFire = new Collab(FanBeam, PlugAsacoco, "Dragon Fire", "64px-Dragon_Fire_Icon.webp", "The power of a once LEGENDARY Dragon. The OG.", HolocureType.Multishot);
+    static readonly Collab EldritchHorror = new Collab(ENCurse, SpiderCooking, "Eldritch Horror", "62px-Eldritch_Horror_Icon.webp", "Summons unknown horrors. May Life-steal up to 5% HP from targets defeated in whirlpool.", HolocureType.Ranged);
+    static readonly Collab EliteCooking = new Collab(EliteLava, SpiderCooking, "Elite Cooking", "64px-Elite_Cooking_Icon.webp", "May have severe unknown side effects if consumed.", HolocureType.Ranged);
+    static readonly Collab FlatteningBoard = new Collab(CuttingBoard, HoloBomb, "Flattening Board", "64px-Flattening_Board_Icon.webp", "Feel the wrath of cutting boards...!?", HolocureType.Multishot);
+    static readonly Collab FrozenSea = new Collab(BlBook, WamyWater, "Frozen Sea", "64px-Frozen_Sea_Icon.webp", "Endless waves of ice that slows targets.", HolocureType.Multishot);
+    static readonly Collab ImDie = new Collab(XPotato, HoloBomb, "I'm Die, Thank You Forever", "64px-I'm_Die,_Thank_You_Forever_Icon.webp", "Throw a Bomb that attaches to a target. When target is defeated, the bomb explodes.", HolocureType.Ranged);
+    static readonly Collab IdolConcert = new Collab(IdolSong, Glowstick, "Idol Concert", "64px-Idol_Concert_Icon.webp", "Throw glowstick in all directions that explode into song!", HolocureType.Ranged);
+    static readonly Collab LegendSausage = new Collab(BlBook, Sausage, "Legendary Sausage", "64px-Legendary_Sausage_Icon.webp", "A continuously spinning sausage. Spins faster as you move.", HolocureType.Ranged);
+    static readonly Collab LightBeam = new Collab(Glowstick, FanBeam, "Light Beam", "64px-Light_Beam_Icon.webp", "Throw glowsticks that explode into targeted beams!", HolocureType.Multishot);
+    static readonly Collab LightningWiener = new Collab(Sausage, PlugAsacoco, "Lightning Wiener", "64px-Lightning_Wiener_Icon.png", "Shoots Lightning charged weiners that home into targets, and summons lightning to strike down when hit.", HolocureType.Multishot);
+    static readonly Collab MiComet = new Collab(EliteLava, PsychoAxe, "MiComet", "64px-MiComet_Icon.webp", "Real business partners.", HolocureType.Ranged);
+    static readonly Collab MiKorone = new Collab(XPotato, EliteLava, "MiKorone", "64px-MiKorone_Icon.webp", "Burning hot potatos fall, and targets hit by it leave lava pools as they move.", HolocureType.Multishot);
+    static readonly Collab RapDog = new Collab(XPotato, IdolSong, "Rap Dog", "64px-Rap_Dog_Icon.webp", "Drop some HOT BEATS where targets hit take 20% more damage.", HolocureType.Ranged);
+    static readonly Collab RingFitness = new Collab(BounceBall, CeoTears, "Ring Of Fitness", "64px-Ring_Of_Fitness_Icon.webp", "Continuously throw a ring of fitness balls. Hope nobody walks in.", HolocureType.Multishot);
+    static readonly Collab SnowSake = new Collab(WamyWater, Glowstick, "Snow Flower Sake", "64px-Snow_Flower_Sake_Icon.webp", "Throw a bottle that shatters into a Snowflake. Has a 30% chance to cause Frozen.", HolocureType.Multishot);
+    static readonly Collab StreamTears = new Collab(FanBeam, CeoTears, "Stream Of Tears", "64px-Stream_of_Tears_Icon.webp", "Nothing can stop the stream of tears.", HolocureType.Ranged);
+    
+    //items
+    static readonly Item Beetle = new Item("Beetle", "64px-Beetle_Icon.webp", "Increase damage of any Character Skill attacks by 33%. Increase it by a further 1% for each player level.", false);
+    static readonly Item BlacksmithGear = new Item("Blacksmith's Gear", "64px-Blacksmith's_Gear_Icon.webp", "Normal anvils can be used twice. Only applies to anvils since taking this item.", false);
+    static readonly Item BodyPillow = new Item("Body Pillow", "64px-Body_Pillow_Icon.webp", "Gain a shield that absorbs up to 15 damage. Every 15 seconds, this shield refreshes. Also reduces damage taken by 10%.", true);
+    static readonly Item Breastplate = new Item("Breastplate", "64px-Breastplate_Icon.webp", "Reduce damage taken by 25% and SPD by 10%. When attacked there is a 50% chance the attacker also takes 200% damage.", true);
+    static readonly Item CandyKingdom = new Item("Candy Kingdom Sweets", "64px-Candy_Kingdom_Sweets_Icon.webp", "Increase Haste by 40%. All attacks deal 0.75x damage, but have a 10% chance to apply a second attack dealing 33% of the initial damage.", false);
+    static readonly Item ChickenFeather = new Item("Chicken's Feather", "64px-Chicken's_Feather_Icon.webp", "Gain 1 revive. On revive, instantly heal 50% HP and all non-Boss targets are defeated.", true);
+    static readonly Item CorpoPin = new Item("Corporation Pin", "64px-Corporation_Pin_Icon.webp", "Every 40% of Pick Up Radius also increases attack area of all weapons by 2%.", false);
+    static readonly Item CreditCard = new Item("Credit Card", "64px-Credit_Card_Icon.webp", "Cost of enhancing is reduced by 20% and anvils appear 20% more often.", true);
+    static readonly Item DevilHat = new Item("Devil Hat", "64px-Devil_Hat_Icon.webp", "After using Special, gain a 25 second buff that increases the damage of all Ranged and Multi-Shot weapons by 1.3x.", false);
+    static readonly Item EnergyDrink = new Item("Energy Drink", "64px-Energy_Drink_Icon.webp", "Increase Haste by 10% and SPD by 40%, but reduce Max HP by 20% as well.", true);
+    static readonly Item FaceMask = new Item("Face Mask", "64px-Face_Mask_Icon.webp", "Multiply all damage dealt by 1.3 times and increase Haste by 10%. Take 30% more damage.", false);
+    static readonly Item FocusShades = new Item("Focus Shades", "64px-Focus_Shades_Icon.webp", "All ranged or multi-shot projectile weapons have +10% chance to crit, and if it does, the target takes 500% of the weapon's damage over 5 seconds.", false);
+    static readonly Item FullMeal = new Item("Full Meal", "64px-Full_Meal_Icon.webp", "All healing is doubled.", false);
+    static readonly Item GorillaPaw = new Item("Gorilla's Paw", "64px-Gorilla's_Paw_Icon.webp", "Attack damage is multiplied by 1.2 times, but lose 20% critical chance.", true);
+    static readonly Item GWSPill = new Item("GWS Pill", "64px-GWS_Pill_Icon.webp", "While the Special meter is still charging, increase crit by 15%. Also increase damage of all Skill attacks by 20%.", false);
+    static readonly Item Halu = new Item("Halu", "50px-Halu_Icon.webp", "Increase regular fan spawns, and fans become 5% stronger. Gain 1 HoloCoin for every 5 targets defeated since taking this item.", false);
+    static readonly Item Headphones = new Item("Headphones", "64px-Headphones_Icon.webp", "15% chance to negate 1 hit, and create a shockwave that knocks back all targets.", true);
+    static readonly Item HopeSoda = new Item("Hope Soda", "64px-Hope_Soda_Icon.webp", "Increase critical hit damage 10% and increase Special cooldown by 25%.", true);
+    static readonly Item IdolCostume = new Item("Idol Costume", "64px-Idol_Costume_Icon.webp", "Reduce Special cooldown by 20%.", false);
+    static readonly Item InjectionAsacoco = new Item("Injection Type Asacoco", "64px-Injection_Type_Asacoco_Icon.webp", "Lose 5% HP every second (until 1 HP remains), but gain 40% ATK.", false);
+    static readonly Item Bandage = new Item("Just Bandage", "64px-Just_Bandage_Icon.webp", "Increase Max HP by 10. After being hit, heal 10% HP every 3 seconds until 80% of the damage taken is recovered (recovers minimum 1 HP).", false);
+    static readonly Item KnightMilk = new Item("Knightly Milk", "64px-Knightly_Milk_Icon.webp", "Increases attack size and knockback effects of weapons by 10%. Also increase Pick Up Range by 30%.", true);
+    static readonly Item KusogakiShackles = new Item("Kusogaki Shackles", "64px-Kusogaki_Shackles_Icon.webp", "Reduce the negative effects of any items placed on the player by 33%.", false);
+    static readonly Item Limiter = new Item("Limiter", "64px-Limiter_Icon.webp", "Gain 100% Pick Up Range.", true);
+    static readonly Item Membership = new Item("Membership", "64px-Membership_Icon.webp", "Lose 3 HoloCoin every second. If HoloCoins is more than 0, increase ATK by 30% and take 10% less damage.", false);
+    static readonly Item NinjaHeadband = new Item("Ninja Headband", "64px-Ninja_Headband_Icon.webp", "Increase SPD by 20%. In addition, increase damage of Melee weapons by 5%.", false);
+    static readonly Item NurseHorn = new Item("Nurse's Horn", "64px-Nurse's_Horn_Icon.webp", "When defeating a target, there is a 30% chance to life-steal 2 HP. If taking a hit while HP is less than 15%, there is a chance to heal 20% HP.", true);
+    static readonly Item PikiPiman = new Item("Piki Piki Piman", "55px-Piki_Piki_Piman_Icon.webp", "Gain 15 Max HP. For every 6 points of total Max HP, increase damage of Main Weapon and Special attacks by 1%.", false);
+    static readonly Item Plushie = new Item("Plushie", "64px-Plushie_Icon.webp", "Delay taken damage. On any hit by a target, take only 30% of the damage initially, then take the remaining damage gradually.", false);
+    static readonly Item PromiseTiara = new Item("Promise Tiara", "64px-Promise_Tiara_Icon.png", "Increase the drop rate of Stamps by 30%. For each stamp that has ever dropped, gain +0.5% Crit and +1% Haste permanently.", false);
+    static readonly Item RavenFeather = new Item("Raven Feather", "64px-Raven_Feather_Icon.webp", "Gain +1 life. Increase 6% ATK every minute. Upon losing 1 life, lose the gained ATK and lose 50% gained HoloCoins at the end of the game.", false);
+    static readonly Item ResearchCoat = new Item("Researcher's Coat", "64px-Researcher's_Coat_Icon.webp", "Gain 1% EXP every 2 seconds. When HP is full, the EXP rate slowly increases to 2%, and is reset to 1% EXP when taking damage.", false);
+    static readonly Item Sake = new Item("Sake", "64px-Sake_Icon.webp", "Gain 1% crit buff every second up to 10%. If taking damage by a target, lose half the buff. If eating food, +5% crit for 10 seconds.", true);
+    static readonly Item PiggyBank = new Item("Stolen Piggy Bank", "64px-Stolen_Piggy_Bank_Icon.webp", "Gain 1 coin for every 100px traveled and increase SPD by 20%. However, reduce Pick Up Range by 30%.", true);
+    static readonly Item StudyGlasses = new Item("Study Glasses", "64px-Study_Glasses_Icon.webp", "Increase EXP gain by 10%. On every level up, increase Weapon damage by 0.3%.", true);
+    static readonly Item SuperChatto = new Item("Super Chatto Time!", "64px-Super_Chatto_Time!_Icon.webp", "Targets drop 20% more HoloCoins. All HoloCoins are picked automatically.", true);
+    static readonly Item UberSheep = new Item("Uber Sheep", "64px-Uber_Sheep_Icon.webp", "Every 10 seconds, food will drop close by. Also increase food drop chance from defeated targets by 10%.", false);
+    
+    // super collabs
+    static readonly SuperCollab HolyFire = new SuperCollab(DragonFire, GorillaPaw, "Holy Fire", "64px-Holy_Fire_Icon.webp", "Spits flames which contain the strength of 50kg(?). All attack damage is also multiplied by 1.3 times.", HolocureType.Multishot);
+    static readonly SuperCollab IdolLive = new SuperCollab(IdolConcert, IdolCostume, "Idol Live", "64px-Idol_Live_Icon.webp", "Put on a Special Live! Reduce Special cooldown by 30%. Whenever activating the Special, increase all stats by 50% for 10 seconds (can only activate once per 30 seconds).", HolocureType.Ranged);
+    static readonly SuperCollab Jingisukan = new SuperCollab(EliteCooking, UberSheep, "Jingisukan", "64px-Jingisukan_Icon.webp", "Throws delicious grilled lamb all around. Standing inside the Jingisukan areas heals 3 HP per second (Considered as Food heal). Also increase Max HP by 100.", HolocureType.Ranged);
+    static readonly SuperCollab SnowQueen = new SuperCollab(SnowSake, Sake, "Snow Queen", "64px-Snow_Queen_Icon.webp", "Freeze everything around, dealing constant damage. Also increases Crit chance by 20%.", HolocureType.Ranged);
+    static readonly SuperCollab TrueBL = new SuperCollab(BLFujoshi, HopeSoda, "True Infinite BL Works", "64px-True_Infinite_BL_Works_Icon.webp", "Has a 20% bonus Crit chance. Also increase critical hit damage by 30%.", HolocureType.Melee);
+    
+    
+    
+    private static readonly List<Weapon> Weapons = 
+    [
+        CeoTears, BlBook, EliteLava, WamyWater, BounceBall, CuttingBoard, ENCurse, FanBeam, Glowstick, HoloBomb, 
+        IdolSong, OwlDagger, PlugAsacoco, PsychoAxe, Sausage, SpiderCooking, XPotato
+    ];
+
+    private static readonly List<Collab> Collabs =
+    [
+        AbsoluteWall, BLFujoshi, BlackPlague, BloodLust, BoneBros, BreatheAsacoco,
+        BrokenDreams, CrescentBardiche, CurseBall, DragonFire, EldritchHorror, EliteCooking, FlatteningBoard, FrozenSea,
+        ImDie, IdolConcert, LegendSausage, LightBeam, LightningWiener, MiComet, MiKorone, RapDog,
+        RingFitness, SnowSake, StreamTears
+    ];
+
+    private static readonly List<Item> Items =
+    [
+        Beetle, BlacksmithGear, BodyPillow, Breastplate, CandyKingdom, ChickenFeather, CorpoPin, CreditCard, DevilHat,
+        EnergyDrink, FaceMask, FocusShades, FullMeal, GorillaPaw, GWSPill, Halu, Headphones, HopeSoda, IdolCostume,
+        InjectionAsacoco, Bandage, KnightMilk, KusogakiShackles, Limiter, Membership, NinjaHeadband, NurseHorn,
+        PikiPiman, Plushie, PromiseTiara, RavenFeather, ResearchCoat, Sake, PiggyBank, StudyGlasses, SuperChatto,
+        UberSheep
+    ];
+
+    private static readonly List<SuperCollab> SuperCollabs =
+    [
+        HolyFire, IdolLive, Jingisukan, SnowQueen, TrueBL
+    ];
+
+    private static int _collabCount = 4;
+    private static int _itemCount = 7;
+    private static string _hoveredItemName = "Hover over an item";
+    private static string _hoveredItemIcon = string.Empty;
+    private static string _hoveredItemDescription = string.Empty;
+    private static string _hoveredItemType = string.Empty;
+    private static string _hoveredItemTypeIcon = string.Empty;
+    private static string _hoveredItemClass = string.Empty;
+    private static BaseHolocureObject? _hoveredItemParent1 = null; 
+    private static BaseHolocureObject? _hoveredItemParent2 = null; 
+    private static List<Weapon> BuildWeapons= [];
+    public static List<Item> BuildItems = [];
+    public static List<BaseHolocureObject> BuildRecommends = [];
+    
+    public class HolocureType(int value, string name, string icon)
+    {
+        public static HolocureType Multishot { get; } = new HolocureType(0, "Multishot", "MultishotWeapon.webp");
+        public static HolocureType Melee { get; } = new HolocureType(1, "Melee", "MeleeWeapon.webp");
+        public static HolocureType Ranged { get; } = new HolocureType(2, "Ranged", "RangedWeapon.webp");
+
+        public string Name { get; set; } = name;
+        public int Value { get; set; } = value;
+        public string Icon { get; set; } = icon;
+
+        private static IEnumerable<HolocureType> List()
+        {
+            return [Multishot, Melee, Ranged];
+        }
+
+        public static HolocureType FromString(string typeString)
+        {
+            return List().Single(t => string.Equals(t.Name, typeString, StringComparison.OrdinalIgnoreCase));
+        }
+
+        public static HolocureType FromValue(int typeValue)
+        {
+            return List().Single(t => t.Value == typeValue);
+        }
+    }
+    
+    public abstract class BaseHolocureObject(string name, string icon, string definition)
+    {
+        public string Name { get; set; } = name;
+        public string Icon { get; set; } = icon;
+        public string Definition { get; set; } = definition;
+        public bool IsSelected { get; set; } = false;
+        public bool IsRestricted { get; set; } = false;
+        
+        public virtual void Selected()
+        {
+            IsSelected = true;
+        }
+
+        public virtual void Deselected()
+        {
+            IsSelected = false;
+        }
+
+        public void Restricted(bool isRestricted)
+        {
+            IsRestricted = isRestricted;
+        }
+
+        public virtual string GetClass()
+        {
+            return "baseObject";
+        }
+
+        public virtual void ShowDetails()
+        {
+            _hoveredItemName = Name;
+            _hoveredItemIcon = Icon;
+            _hoveredItemDescription = Definition;
+            _hoveredItemClass = GetClass();
+        }
+
+        public virtual void ClearDetails()
+        {
+            _hoveredItemName = "Hover over an item";
+            _hoveredItemIcon = string.Empty;
+            _hoveredItemDescription = string.Empty;
+            _hoveredItemClass = string.Empty;
+        }
+    }
+    
+    public class Weapon(string name, string icon, string definition, HolocureType holocureType)
+        : BaseHolocureObject(name, icon, definition)
+    {
+        public bool IsRecommended { get; set; } = false;
+        public HolocureType WeaponHolocureType { get; set; } = holocureType;
+
+        public override void Selected()
+        {
+            base.Selected();
+            BuildWeapons.Add(this);
+            FindRecommended();
+        }
+
+        public override void Deselected()
+        {
+            base.Deselected();
+            BuildWeapons.Remove(this);
+            FindRecommended();
+        }
+
+        public void FindRecommended()
+        {
+            
+        }
+
+        public void RecommendedCollab()
+        {
+            
+        }
+
+        public override string GetClass()
+        {
+            return "weapons";
+        }
+
+        public override void ShowDetails()
+        {
+            base.ShowDetails();
+            _hoveredItemType = WeaponHolocureType.Name;
+            _hoveredItemTypeIcon = WeaponHolocureType.Icon;
+        }
+
+        public override void ClearDetails()
+        {
+            base.ClearDetails();
+            _hoveredItemType = string.Empty;
+            _hoveredItemTypeIcon = string.Empty;
+        }
+    }
+    
+    public class Collab(Weapon weapon1, Weapon weapon2, string name, string icon, string definition, HolocureType holocureType)
+        :Weapon(name, icon, definition, holocureType)
+    {
+        public List<Weapon> ParentWeapons { get; set; } = [weapon1, weapon2];
+
+        public override void Selected()
+        {
+            if (_collabCount <= 0) return;
+            base.Selected();
+            _collabCount--;
+            foreach (Weapon parentWeapon in ParentWeapons)
+            {
+                parentWeapon.Selected();
+                OtherCollabSearch(parentWeapon);
+            }
+            
+            foreach (SuperCollab superCollab in SuperCollabs.Where(sc => sc.ParentCollab.Equals(this)))
+            {
+                superCollab.MakeAvailable();
+            }
+        }
+
+        public override void Deselected()
+        {
+            base.Deselected();
+            _collabCount++;
+            foreach (Weapon parentWeapon in ParentWeapons)
+            {
+                parentWeapon.Deselected();
+                OtherCollabSearch(parentWeapon);
+            }
+            
+            foreach (SuperCollab superCollab in SuperCollabs.Where(sc => sc.ParentCollab.Equals(this)))
+            {
+                superCollab.MakeUnavailable();
+                superCollab.Deselected();
+            }
+        }
+
+        public override string GetClass()
+        {
+            return "collabs";
+        }
+
+        public override void ShowDetails()
+        {
+            base.ShowDetails();
+            _hoveredItemParent1 = ParentWeapons[0];
+            _hoveredItemParent2 = ParentWeapons[1];
+        }
+
+        public override void ClearDetails()
+        {
+            base.ClearDetails();
+            _hoveredItemParent1 = null;
+            _hoveredItemParent2 = null;
+        }
+
+        public void OtherCollabSearch(Weapon weapon)
+        {
+            foreach (Collab collab in Collabs.Where(collab => collab.ParentWeapons.Any(collabWeapon => collabWeapon.Equals(weapon)) && !collab.Equals(this)))
+            {
+                collab.Restricted(IsSelected);
+            }
+        }
+    }
+    
+    public class SuperCollab: Weapon
+    {
+        public Collab ParentCollab { get; set; }
+        public Item ParentItem { get; set; }
+        public bool IsAvailable { get; set; } = false;
+
+        public SuperCollab(Collab parentCollab, Item parentItem, string name, string icon, string definition, HolocureType holocureType):base(name, icon, definition, holocureType)
+        {
+            ParentCollab = parentCollab;
+            ParentItem = parentItem;
+            IsRestricted = true;
+        }
+
+        public override void Selected()
+        {
+            base.Selected();
+            ToggleSingleSuperCollabLimit();
+        }
+
+        public override void Deselected()
+        {
+            base.Deselected();
+            ToggleSingleSuperCollabLimit();
+        }
+
+        public override void ShowDetails()
+        {
+            base.ShowDetails();
+            _hoveredItemParent1 = ParentCollab;
+            _hoveredItemParent2 = ParentItem;
+        }
+
+        public override void ClearDetails()
+        {
+            base.ClearDetails();
+            _hoveredItemParent1 = null;
+            _hoveredItemParent2 = null;
+        }
+
+        public override string GetClass()
+        {
+            return "superCollabs";
+        }
+
+        public void MakeAvailable()
+        {
+            IsAvailable = true;
+            Restricted(!IsAvailable);
+        }
+
+        public void MakeUnavailable()
+        {
+            IsAvailable = false;
+            Restricted(!IsAvailable);
+        }
+
+        private void ToggleSingleSuperCollabLimit()
+        {
+            if (ParentCollab.IsSelected)
+            {
+                IsAvailable = !IsSelected;
+            }
+            foreach (SuperCollab superCollab in SuperCollabs.Where(sc => sc.IsAvailable && !sc.Equals(this)))
+            {
+                superCollab.Restricted(IsSelected);
+            }
+        }
+    }
+    
+    public class Item(string name, string icon, string definition, bool canSuper) : BaseHolocureObject(name, icon, definition)
+    {
+        public bool IsNeeded { get; set; } = false;
+        public bool CanSuper { get; set; } = canSuper;
+
+        public override void Selected()
+        {
+            if (_itemCount <= 0) return;
+            base.Selected();
+            _itemCount--;
+        }
+
+        public override void Deselected()
+        {
+            base.Deselected();
+            _itemCount++;
+        }
+
+        public override void ShowDetails()
+        {
+            base.ShowDetails();
+        }
+
+        public override void ClearDetails()
+        {
+            base.ClearDetails();
+        }
+
+        public override string GetClass()
+        {
+            return "items";
+        }
+    }
 }
